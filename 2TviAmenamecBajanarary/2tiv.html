@@ -1,0 +1,38 @@
+<html>
+<body>
+    a:<input id="a"><br>
+    b:<input id="b"><br>
+    <button onclick="find()">Find</button>
+    <div id="cd"></div>
+<script>
+function find(){
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    document.getElementById("cd").innerHTML = maxComDen(a,b);  
+}
+function maxComDen(a,b){
+    let max,min
+    
+    if (a>b){
+        max = a
+        min = b
+    }
+    else {
+        min = a 
+        max = b 
+    }
+    
+    for (let i=min; i>0; i--) {
+        let d = min%i
+        if (d==0) {
+            d=max%i
+            if (d==0) {
+                return i
+            }
+                
+        }
+    }
+}
+</script>
+</body>
+</html>
