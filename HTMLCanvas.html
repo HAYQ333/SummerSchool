@@ -1,0 +1,30 @@
+<html>
+  <body>
+    <canvas id="c" width="400" height="300" style="background:#0f0"></canvas>
+    <script>
+      const canvas = document.getElementById("c");
+      const ctx = canvas.getContext("2d");
+
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        
+        let N=10;//անկիւնի քանակ
+        let A=360/N;//անկեան քայլ
+        let R=50;
+        let x0=R*1.5;
+        let y0=R*1.5; 
+        
+        ctx.moveTo(x0+R,y0);
+        
+        for(let n=1;n<N;n++){
+            let a=n*A;
+            a=a*Math.PI/180;//աստիճանէ ռադիան
+            let x=x0+R*Math.cos(a);
+            let y=y0+R*Math.sin(a);
+            ctx.lineTo(x,y);
+        }
+        ctx.closePath();
+        ctx.stroke();
+    </script>
+  </body>
+</html>
